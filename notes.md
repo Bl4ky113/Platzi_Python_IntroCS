@@ -76,4 +76,44 @@ El orden para usarlos es:
 El faltar esta regla nos dara un error de sintaxis y el poner algo ilogico, cómo dividir un str por un bool, nos va a dar 
 un error de semantica estatica.
 
-Me voy a saltar un poco de las notas, porqué estan muy básicas :c
+Me voy a saltar un poco de las notas, porqué estan muy básicas :c. Pase todo un módulo, pero esto suena interesante.
+
+## Enueración Exaustiva
+Algunas veces vamos a tener que mirar a varias opciones para resolver un problema, afortunadamente con las computadoras, 
+podemos realizar de una forma rapida miles de operaciones en segundos. Dandonos una gran ventaja.
+
+Para aprovecharla, deberiamos usarla para hacer diferentes operaciones sencillas o no muy complejas a grandes proporciones.
+
+Sin embargo al hacer algo muy rapido perdemos mucha de la presición. Entonces debemos encontrar un rango donde estemos con la respuesta 
+indicada, pero sin demorarnos mucho tiempo.
+
+## Aproximación de Soluciones
+Para aproximar las soluciones que requieran de un alto procesamiento y velocidad, debemos tener un rango de aceptación o de verificación de nuestros
+resultados. Este rango se va a llamar Epsilon. Al determinar Epsilon, generalmente una medida de 2 o más decimales. 0.001. Vamos a 
+calcular cada incremento de un valor, potenciandolo a la segunda potencia. Para que así al hacer varias operaciones no se pase de epsilon.
+
+## Búsqueda Binaria
+Ya tenemos una forma rápida, pero que no nos da una respuesta en el error o la aproximación. Una forma medio para dar con la aproximación y 
+ahora tenemos una forma RAPIDISIMA para hacer un algoritmo que tenga una secuencia constante.
+
+Es decir, los números naturales son constantes porque el 1 va antes del 2, el 2 antes del 3, y así. Teniendo una secuencia de suma de 1 en 1 constante. 
+
+Esto nos va a permitir que al buscar por ejemplo una raiz cuadrada, tengamos mucha más precisión si hacemos una busqueda binaria de Metodo Númerico de bisección. Es decir, vamos a tomar el grupo de números desde 0 hasta el objetivo, ejemplo: 7.
+
+Vamos a determinar un Epsilon, o rango aceptable de nuestros resultados. Un punto bajo, generalmente 0, y un punto alto, que va a ser el mismo 
+objetivo. Vamos a realizar una respuesta que va a ser la mitad de estos puntos:
+
+(punto_bajo + punto_alto) / 2 = (0 + 7) / 2 = 3.5
+
+Ahí hemos hecho una bisection o haber partido a la mitad los datos. Vamos a meternos en un loop donde vamos a verificar si la mitad de esos datos,
+en este caso 3.5, cuando se potencia a el cuadrado y la diferencia entre ese y el objetivo es igual o mayor a epsilon. Si si nos da el resultado 
+deseado, ahora buena, tenemos nuestro resultado final. Sin embargo esto casí nunca va a pasar, por lo tanto vamos a hacer el mismo proceso de bisectar.
+
+Pero hay otro problema, tenemos dos piezas, y para no gastar recursos, cual de las dos deberiamos bisectar? Sencillo. Si la respuesta anterior 
+es menor que el objetivo, vamos a tomarlo cómo el punto bajo, es decir hemos elegido la parte mayor. Si es a el contrario, respuesta mayor a el 
+objetivo, vamos a tomar esa respuesta como el nuevo punto alto, es decir hemos elegido la parte menor. 
+
+Y apartir de elegir esa mitad, ya sea la menor o la mayor, vamos a bisectarla otra vez hasta obtener el resultado deseado.
+
+Cumpliendo así la funcion de un loop. Pero mucho más optimizado.
+
