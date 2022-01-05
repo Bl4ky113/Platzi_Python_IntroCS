@@ -117,3 +117,44 @@ Y apartir de elegir esa mitad, ya sea la menor o la mayor, vamos a bisectarla ot
 
 Cumpliendo así la funcion de un loop. Pero mucho más optimizado.
 
+## Functions y Abstracción
+
+### Abstracción
+Es la forma en la que nosotros debemos aprender a usar algo, pero no necesitamos exactamente saber cómo funciona internamente para hacer de su uso.
+Ejemplo los módulos, librerias de codigo. O cosas más comunes cómo los electrodomesticos, vehiculos, entre otros.
+
+### Decomposición
+Es la forma en la que vamos a dividir en pequeñas partes a nuestro código, haciendolo más compacto y evitar repetirnos usando herramientas cómo
+las functions.
+
+Una explicación sencilla de que es una function y sus partes e propiedades.
+
+## Scope 
+El alcance o Scope es el alcance que tienen los objetos de python, ya sean classes, functions, variables, entre otros.
+El scope global es el scope que siempre va a estar disponible, cómo las librerias importadas o variables globales.
+Generalmente entre modulos, cómo las clases y las functions, no se pueden usar objectos fuera del scope, ademas de los globales.
+Entre más "profundo" bloques de código se declare un objeto, no va a poder ser usado en otros bloques exteriores.
+
+## Documentación
+Siempre que vamos a hacer una function, deberiamos documentar su funcion de forma resumida, explicar que son cada parametro recibido y cual va a serel uso, y difinir que es y que va a ser el return de la function.
+
+Esto se hace para que los demás devs puedan leer de una mejor forma nuestro código, si queremos leer la documentación de una function, podemos hacer
+uso de help(function). 
+
+Estos comentarios se deben hacer con triple comillas dobles. """   """
+
+## Recursividad
+El concepto de recursividad es aquel de una function que para realizar su función debe llamarse a si misma otra vez. Pasando otros parametros, 
+generalmente modificados dentro de la misma function. Un ejemplo de esto es la secuencia fibonnacci. Que tiene la siguiente formula:
+
+n = (n - 1) + (n - 2)
+
+o un resultado factorial:
+
+n! = n * (n - 1)!
+
+En ambos vamos a tener que realizar varias veces una operación o función con diferentes valores hasta dar con el resultado. 
+Ademas de la función, debemos agregar alguna forma para parar la recurción, ya que nos puede dar un error si la funtion se llama muchas veces 
+a sí misma, por ahí más de 900 veces. 
+
+
