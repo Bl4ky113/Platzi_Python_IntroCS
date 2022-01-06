@@ -157,4 +157,57 @@ En ambos vamos a tener que realizar varias veces una operación o función con d
 Ademas de la función, debemos agregar alguna forma para parar la recurción, ya que nos puede dar un error si la funtion se llama muchas veces 
 a sí misma, por ahí más de 900 veces. 
 
+## Test de Black Box
+La caja negra es el concepto de lo desconocido, principalmente una function que no sabemos que va a contener, pero que sabemos que al darle un input
+nos va a dar un output exacto. Esto nos puede ayudar a hacer pruebas de código de una forma muy sencilla. 
+
+Para hacer este tipos de pruebas vamos a importar el módulo de unittest. Vamos a hacer una clase en el archivo principal, __main__. Y en 
+esta clase vamos a pasarle el argumento: unittest.TestCase.
+
+Ahora dentro de esta clase vamos a hacer diferentes functions para hacer prueba a partes de nuestro código. Para ejemplo, una suma de valores, 
+vamos a usar la function de nuestra clase assertEqual() de la siguiente forma en el siguiente contexto:
+
+Tenemos una function que suma dos números, vamos a sumar 2 + 2, el output de este debe ser 4. Sencillo. Vamos a hacer una function en 
+la clase de BlackBox para probar esta function.
+
+escribimos el resultado, en una variable preferiblemente y lo vamos a usar.
+resultado = suma(2, 2)
+
+despues con self, que tiene el valor de unittest.TestCase, vamos a llamar la function assertEqual(), que nos va a permitir 
+verificar el resultado esperado y el resultado dado por la funtion, haciendolo de la siguiente forma:
+
+self.asserEqual(resultado, 4)
+
+Ahora esto puede ser igual a un if resultado == 4, haga una cosa. Sin embargo lo especial de este metodo es la información que nos proveé, 
+cómo una prueba. Nos da tiempo de ejecución, resultados, y si no son iguales va a saltar el error. Dandonos una mejor prueba frente a cambios 
+que pueden ocurrir en el código.
+
+Y se me olvida agregar, cómo esto debe ser hecho en el archivo principal. __main__. Vamos a tener que decirle que haga las pruebas cómo tal.
+En el bloque de:
+
+if __name__ == "__main__":
+	unittest.main()
+
+simplemente agregamos que se ejecuten los tests y unittest los correra automaticamente.
+
+Y esto para que me sirve? Para hacer diferentes tests
+
+### Modular Testing
+Testear cada módulo, function o elemento por aparte para ver si solo funciona bien.
+
+### Integration Testing
+Testear diferentes grupos de módulos, functions o elementos para ver si sí pueden funcionar en conjunto, hasta tener un 
+test global o total del programa
+
+## Cristal Box 
+Mientras que la BlackBox es una caja desconocida, la cristal box es un tipo de prueba en el que ya sabemos que hay en la caja, y tenemos 
+los mismos datos, sabemos que inputs se necesitan para ciertas outputs. Y se puede aplicar de casí la misma forma que una BlackBox, entonces
+cual es la diferencia?
+
+La principal diferencia es que con la BlackBox, no tenemos hecha o aun totalmente definida la function, pero si sus outputs y inputs. Siendo 
+perfecta para probar MIENTRAS SE ESTA DESARROLLANDO.
+
+Mientas que con las cristal box, tenemos definida y en parte funcionando la function, y en parte sus outputs y inputs. Siendo perfecta para 
+probar todo los posibles resultados de la function, dentro de un margen. Saliendo a la luz los posibles errores que tienen.
+
 
